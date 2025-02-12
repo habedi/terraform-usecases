@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "terraform-usecases"
 version = "0.1.0"
-description = "A collection of terraform use cases"
+description = "A collection of Terraform use cases"
 authors = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
 readme = "README.md"
 license = "MIT"
