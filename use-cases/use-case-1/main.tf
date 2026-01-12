@@ -1,6 +1,17 @@
+# This Terraform configuration file sets up an AWS infrastructure with the following resources:
+# - VPC
+# - Internet Gateway
+# - Subnet
+# - Route Table and its association with the subnet
+# - Security Group allowing SSH access
+# - EC2 Instance
+# - Key Pair for SSH access
+# - Null resource to push the public key to the instance
+
 # AWS Region to deploy the resources
 provider "aws" {
-    region = "us-east-1"
+    region = var.region
+    profile = var.profile
 }
 
 # Network Resources
@@ -58,15 +69,44 @@ resource "aws_security_group" "allow_ssh" {
     }
 }
 
-resource "aws_instance" "server_one" {
-    ## AMI
-    ami = var.ami_id
-    instance_type = var.instance_type
+# Create an EC2 instance
+resource "aws_instance" "single_server" {
+    ami           = var.server.ami
+    instance_type = var.server.instance_type
 
-    ## Network
     vpc_security_group_ids = [aws_security_group.allow_ssh.id]
     subnet_id = aws_subnet.public.id
 
-    ## Assign a public IP address
+    # Associate a public IP address with the instance
     associate_public_ip_address = true
+
+    # Use the key pair created in the module
+    key_name = aws_key_pair.my_key_pair.key_name
+
+    # Run a command in the instance
+    user_data = <<-EOF
+                #!/bin/bash
+                sudo apt-get update
+                sudo apt-get upgrade -y
+                sudo apt-get install pipx wget postgresql-client pgloader -y
+                sudo -u ubuntu pipx install awscli harlequin[postgres]
+                sudo -u ubuntu pipx ensurepath
+                wget -c https://gist.githubusercontent.com/habedi/94831e88b7405f4bb7091009bd42b0f8/raw/697bf062cc003d136aaf0082554f159477c4377c/install_useful_cli_tools.sh
+                chmod +x install_useful_cli_tools.sh
+                ./install_useful_cli_tools.sh
+                sudo apt-get autoremove -y
+                sudo apt-get clean
+                EOF
+
+    # Define how Terraform connects to the instance
+    connection {
+        type = "ssh"
+        host = self.public_ip
+        user = "ubuntu" # Default user for Ubuntu AMIs
+        private_key = file(var.key_info.private_key_path) # Path to your private key
+    }
+
+    tags = {
+        Name = "Single Server"
+    }
 }
