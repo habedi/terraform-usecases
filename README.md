@@ -35,7 +35,7 @@ cd terraform-usecases
 nix develop
 ```
 
-### 3. Run the tests (optional)
+#### 3. Run the tests (optional)
 
 ```shell
 make test
