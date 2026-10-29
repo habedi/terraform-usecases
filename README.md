@@ -1,7 +1,7 @@
 ## Terraform Use Cases
 
 [![Tests](https://img.shields.io/github/actions/workflow/status/habedi/terraform-usecases/tests.yml?label=tests&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/terraform-usecases/actions/workflows/tests.yml)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-007ec6?style=flat&labelColor=282c34&logo=open-source-initiative)](LICENSE)
 
 ---
 
@@ -35,7 +35,7 @@ cd terraform-usecases
 nix develop
 ```
 
-### 3. Run the tests (optional)
+#### 3. Run the tests (optional)
 
 ```shell
 make test
