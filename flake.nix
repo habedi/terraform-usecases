@@ -33,6 +33,7 @@
           ];
 
           shellHook = ''
+            unset PYTHONPATH
             echo "Terraform use cases development shell loaded."
             echo "Terraform: $(terraform -version 2>/dev/null | head -n 1 || echo 'not found')"
             echo "AWS CLI: $(aws --version 2>/dev/null || echo 'not found')"
