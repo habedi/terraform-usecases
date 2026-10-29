@@ -26,7 +26,7 @@
             gnumake
             pre-commit
             uv
-            python312
+            python314
           ];
 
           shellHook = ''

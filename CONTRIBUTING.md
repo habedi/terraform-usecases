@@ -34,7 +34,7 @@ you would like to work on or if it has already been resolved.
 
 #### Prerequisites
 
-Make sure you have [Nix](https://nixos.org/download.html) installed on your system.
+Make sure you have [Nix](https://nixos.org/download.html) (with flakes enabled) installed on your system.
 
 ```shell
 nix develop

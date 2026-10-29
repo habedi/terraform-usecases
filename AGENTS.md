@@ -62,7 +62,7 @@ The priority order of tasks is defined below.
 
 ## Python Conventions
 
-- Python version `>=3.10` declared in package configuration.
+- Python version `>=3.14` declared in package configuration.
 - Dependency management using uv.
 - Execution of commands using `uv run`.
 
