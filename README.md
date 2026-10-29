@@ -14,17 +14,27 @@ List of currently implemented use cases:
 | 2     | [Provision a Server and a Database](use-cases/use-case-2)                   | Simple     |
 | 3     | [Set up a GraphQL API with AppSync and Amazon Aurora](use-cases/use-case-3) | Complex    |
 
-### Managing Dependencies with uv
+### Quickstart
 
-Optionally, you can use [uv](https://docs.astral.sh/uv/) to manage the Python dependencies:
+To follow the steps below, you need to have Git and [Nix](https://nixos.org/download/) (with flakes enabled) installed on your machine.
 
-```bash
-# Install dependencies
-uv sync
+#### 1. Clone the repository
 
-# Run tools with uv
-uv run aws --version
-uv run pytest
+```shell
+git clone https://github.com/habedi/terraform-usecases.git
+cd terraform-usecases
+```
+
+#### 2. Set up the development environment
+
+```shell
+nix develop
+```
+
+### 3. Run the tests (optional)
+
+```shell
+make test
 ```
 
 ---

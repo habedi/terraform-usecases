@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.14, <4.0"
 
 [[package]]
@@ -349,7 +349,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "awscli", specifier = ">=1.32.103" }]
+requires-dist = [{ name = "awscli", specifier = ">=1.46.2" }]
 
 [package.metadata.requires-dev]
 dev = [
