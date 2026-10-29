@@ -6,9 +6,9 @@
 ---
 
 This repository contains a collection of use cases where [Terraform](https://www.terraform.io/) is used to provision resources
-in [AWS](https://aws.amazon.com/) to set up environments for various tasks.
+in AWS to set up environments for various tasks.
 
-List of currently implemented use cases:
+#### List of currently implemented use cases
 
 | Index | Title                                                                       | Complexity |
 |-------|-----------------------------------------------------------------------------|------------|
