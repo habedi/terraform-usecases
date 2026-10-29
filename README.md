@@ -1,7 +1,9 @@
 ## Terraform Use Cases
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github/habedi/terraform-usecases/blob/main/LICENSE)
-[![CodeFactor](https://www.codefactor.io/repository/github/habedi/terraform-usecases/badge)](https://www.codefactor.io/repository/github/habedi/terraform-usecases)
+[![Tests](https://img.shields.io/github/actions/workflow/status/habedi/terraform-usecases/tests.yml?label=tests&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/terraform-usecases/actions/workflows/tests.yml)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+---
 
 This repository contains a collection of use cases where [Terraform](https://www.terraform.io/) is used to provision resources
 in [AWS](https://aws.amazon.com/) to set up environments for various tasks.
@@ -13,6 +15,8 @@ List of currently implemented use cases:
 | 1     | [Provision a Server](use-cases/use-case-1)                                  | Simple     |
 | 2     | [Provision a Server and a Database](use-cases/use-case-2)                   | Simple     |
 | 3     | [Set up a GraphQL API with AppSync and Amazon Aurora](use-cases/use-case-3) | Complex    |
+
+---
 
 ### Quickstart
 
