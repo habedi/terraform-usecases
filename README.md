@@ -14,10 +14,15 @@ List of currently implemented use cases:
 | 2     | [Provision a Server and a Database](use-cases/use-case-2/)                   | Simple     |
 | 3     | [Set up a GraphQL API with AppSync and Amazon Aurora](use-cases/use-case-3/) | Complex    |
 
-## Installing Poetry
+## Managing Dependencies with uv
 
-Optionally, you can use [Poetry](https://python-poetry.org/) to manage the Python dependencies (if you use Python for scripting, etc.).
+Optionally, you can use [uv](https://docs.astral.sh/uv/) to manage the Python dependencies:
 
 ```bash
-pipx install poetry # or uv tool install poetry
+# Install dependencies
+uv sync
+
+# Run tools with uv
+uv run aws --version
+uv run pytest
 ```

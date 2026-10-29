@@ -1,17 +1,22 @@
-[tool.poetry]
+[project]
 name = "terraform-usecases"
 version = "0.1.0"
 description = "A collection of Terraform use cases"
-authors = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
 readme = "README.md"
-license = "MIT"
+license = { text = "MIT" }
+authors = [
+    { name = "Hassan Abedi", email = "hassan.abedi.t@gmail.com" }
+]
+requires-python = ">=3.14,<4.0"
+dependencies = [
+    "awscli>=1.32.103",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-pylint = "^3.0.3"
-pytest = "^8.0.1"
-awscli = "^1.32.103"
+[dependency-groups]
+dev = [
+    "pylint>=3.0.3",
+    "pytest>=8.0.1",
+]
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+package = false
