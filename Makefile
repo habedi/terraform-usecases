@@ -23,12 +23,6 @@ format: ## Format Terraform configuration files
 		terraform fmt -recursive; \
 	fi
 
-.PHONY: lint
-lint: ## Check Terraform configuration format
-	@if command -v terraform >/dev/null 2>&1; then \
-		terraform fmt -check -recursive; \
-	fi
-
 .PHONY: test
 test: ## Run the tests
 	$(UV) run pytest
