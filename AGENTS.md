@@ -4,7 +4,8 @@ This file provides guidance to coding agents collaborating on this repository.
 
 ## Mission
 
-This repository contains a collection of Terraform use cases provisioning resources in AWS to set up environments for various infrastructure and application scenarios.
+This repository contains a collection of Terraform use cases provisioning resources in AWS to set up environments for various infrastructure and
+application scenarios.
 
 The priority order of tasks is defined below.
 
@@ -28,7 +29,8 @@ The priority order of tasks is defined below.
 - Do not use em dashes. Restructure the sentence, or use a semicolon or period instead.
 - Avoid colorful adjectives and adverbs, writing "server deployment" instead of "robust server deployment".
 - Prefer using noun phrases for checklist items instead of imperative verbs, such as writing "variable validation" instead of "validate variables".
-- Write headings in markdown files in title case, for example, "Provision a Server" instead of "Provision a server". Minor words (a, an, the, and, but, or, for, in, on, at, to, by, of, from, and with) stay lowercase unless they are the first word.
+- Write headings in markdown files in title case, for example, "Provision a Server" instead of "Provision a server". Minor words (a, an, the, and,
+  but, or, for, in, on, at, to, by, of, from, and with) stay lowercase unless they are the first word.
 - Write correct and complete sentences.
 - Avoid made-up words, abbreviations, and colons in the middle of sentences.
 - Do not use pretentious language.
@@ -36,9 +38,9 @@ The priority order of tasks is defined below.
 ## Repository Layout
 
 - `use-cases/` for individual use case implementations.
-  - `use-cases/use-case-1/` for provisioning a single server and networking resources.
-  - `use-cases/use-case-2/` for provisioning a server and an RDS database instance.
-  - `use-cases/use-case-3/` for setting up a GraphQL API with AWS AppSync and RDS Aurora.
+    - `use-cases/use-case-1/` for provisioning a single server and networking resources.
+    - `use-cases/use-case-2/` for provisioning a server and an RDS database instance.
+    - `use-cases/use-case-3/` for setting up a GraphQL API with AWS AppSync and RDS Aurora.
 - `use-cases/*/main.tf` for primary resource definitions.
 - `use-cases/*/variables.tf` for input variable declarations, types, and descriptions.
 - `use-cases/*/outputs.tf` for output definitions.
@@ -70,12 +72,12 @@ The priority order of tasks is defined below.
 
 Run the relevant targets for any change:
 
-| Target           | Command                             | What It Runs                                          |
-|------------------|-------------------------------------|-------------------------------------------------------|
-| Format check     | `terraform fmt -check -recursive`   | Checks Terraform configuration format across modules. |
-| Formatting       | `terraform fmt -recursive`          | Applies automatic Terraform style alignment.          |
-| Module check     | `terraform validate`                | Validates syntax and configuration in a module.       |
-| Dependency check | `uv sync --locked`                  | Verifies Python environment and lockfile consistency. |
+| Target           | Command                           | What It Runs                                          |
+|------------------|-----------------------------------|-------------------------------------------------------|
+| Format check     | `terraform fmt -check -recursive` | Checks Terraform configuration format across modules. |
+| Formatting       | `terraform fmt -recursive`        | Applies automatic Terraform style alignment.          |
+| Module check     | `terraform validate`              | Validates syntax and configuration in a module.       |
+| Dependency check | `uv sync --locked`                | Verifies Python environment and lockfile consistency. |
 
 ## Change Design Checklist
 
