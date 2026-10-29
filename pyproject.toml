@@ -1,19 +1,20 @@
 [project]
 name = "terraform-usecases"
 version = "0.1.0"
-description = "A collection of Terraform use cases"
+description = "A collection of terraform use cases"
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
     { name = "Hassan Abedi", email = "hassan.abedi.t@gmail.com" }
 ]
-requires-python = ">=3.14,<4.0"
+requires-python = ">=3.10,<4.0"
 dependencies = [
     "awscli>=1.32.103",
 ]
 
 [dependency-groups]
 dev = [
+    "pre-commit>=4.0.0",
     "pylint>=3.0.3",
     "pytest>=8.0.1",
 ]
